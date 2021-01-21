@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import SmallForm from '../../components/smallForm/SmallForm';
+import SmallForm from '../../../components/smallForm/SmallForm';
 
 test('has the correct welcome text', () => {
     render(<SmallForm firstName="sai" lastName="prakash" />)

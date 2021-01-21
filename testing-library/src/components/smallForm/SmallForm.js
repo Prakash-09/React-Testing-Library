@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'reactstrap';
 
 class SmallForm extends React.Component {
     constructor(props) {
@@ -13,8 +14,8 @@ class SmallForm extends React.Component {
     handleChange = (e) => {
         let name = e.target.name;
         let val = e.target.val;
-        
-        this.setState({ [name] : val})
+
+        this.setState({ [name]: val })
     }
 
     render() {
@@ -23,14 +24,16 @@ class SmallForm extends React.Component {
             <div>
                 <h1> Hello {firstName} </h1>
                 <form name="userName">
-                    <label>
-                        First Name
-                        <input value={firstName} name="firstName" onChange={this.handleChange} />
-                    </label>
-                    <label>
-                        Last Name
-                        <input value={lastName} name="lastName" onChange={this.handleChange} />
-                    </label>
+                    <Row className="m-0">
+                        <Col className="p-1">
+                            <label> First Name </label>
+                            <input value={firstName} name="firstName" onChange={this.handleChange} className="w-100" />
+                        </Col>
+                        <Col className="p-1">
+                            <label> Last Name </label>
+                            <input value={lastName} name="lastName" onChange={this.handleChange} className="w-100" />
+                        </Col>
+                    </Row>
                 </form>
             </div>
         );
